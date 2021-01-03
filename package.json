@@ -1,8 +1,8 @@
 {
-  "name": "nest-typescript-starter",
+  "name": "recipe-buddy-backend",
   "private": true,
   "version": "1.0.0",
-  "description": "Nest TypeScript starter repository",
+  "description": "Stores personal recipes and provides existing recipes based on ingredients specified",
   "license": "MIT",
   "scripts": {
     "prebuild": "rimraf dist",
