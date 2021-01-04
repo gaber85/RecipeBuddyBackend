@@ -6,7 +6,12 @@ import { UsersService } from './users.service';
 export class UserResolver {
   constructor(private usersService: UsersService) {}
 
-  @Query(() => User, { name: 'user' })
+  @Query(() => [User], { name: 'users' })
+  async getUsers(): Promise<User[]> {
+    return this.usersService.findAll();
+  }
+
+  @Query(() => User, { name: 'user', nullable: true })
   async getUser(@Args('id', { type: () => ID }) id: number) {
     return this.usersService.findOne(id);
   }
