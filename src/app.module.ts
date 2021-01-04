@@ -9,11 +9,13 @@ import { UsersModule } from './users/users.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
-    UsersModule,
     GraphQLModule.forRoot({
+      autoSchemaFile: 'schema.gql',
       debug: false,
       playground: true,
+      sortSchema: true,
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
